@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preload" href="fonts/ptsans.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/ptsansbold.woff2" as="font" crossorigin="anonymous">
+    <title>Elfsight photo gallery</title>
+</head>
+<body>
+  <div id="root">
+    <div class="container">
+      <section class="main">
+        <h1 class="main__header header">Timer</h1>
+        <div class="main__timer timer">
+          <ul class="timer__buttons buttons">
+            <li class="buttons__item"><button class="buttons__button buttons__button--start">Start</button></li>
+            <li class="buttons__item"><button class="buttons__button buttons__button--close">Stop</button></li>
+            <li class="buttons__item"><button class="buttons__button buttons__button--state">Show/Hide</button></li>
+          </ul>
+          <table class="timer__counter">
+            <tbody>
+              <tr>
+                <th>Days</th>
+                <th>Time</th>
+              </tr>
+              <tr>
+                <td>0</td>
+                <td>00:00:09</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script src="./bundle.js"></script>
+</body>
+</html>
