@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preload" href="fonts/Roboto-Regular.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/Roboto-Bold.woff2" as="font" crossorigin="anonymous">
+    <title>Elfsight photo gallery</title>
+</head>
+<body>
+  <div id="root">
+    <div class="container">
+      <header class="page-header">
+        <nav class="page-header__nav-full nav-full">
+          <ul class="nav-full__list">
+            <li class="nav-full__item">
+              <a class="nav-full__link">Authors</a>
+            </li>
+            <li class="nav-full__item">
+              <a class="nav-full__link">Albums</a>
+            </li>
+            <li class="nav-full__item">
+              <a class="nav-full__link nav-full__link--inactive">Photos</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="page-header__nav-mobile nav-mobile">
+          <a class="nav-mobile__link" href="./index.html">
+            <div class="nav-mobile__name">Albums</div>
+          </a>
+        </nav>
+      </header>
+      <main class="page-albums">
+        <h1 class="visually-hidden">Photos</h1>
+        <section class="page-albums__album-cover">
+          <h2 class="visually-hidden">Author</h2>
+          <div class="album-cover__image--container">
+            <img class="album-cover__image" src="./img/thumbnail.jpg" width="187" height="187" alt="Username">
+          </div>
+          <div class="album-cover__description">
+            <h3 class="album-cover__header">
+              quidem molestiae enim
+              <span class="album-cover__author-name">Author: Leanne Graham</span>
+            </h3>
+          </div>
+        </section>
+        <section class="page-albums__photos photos">
+          <h2 class="visually-hidden">Photos list</h2>
+          <ul class="photos__list">
+            <li class="photos__item photo">
+              <a class="photo__link" href="./img/image.jpg">
+                <div class="photo__image-container">
+                  <img class="photo__image" src="./img/thumbnail.jpg" width="300" height="300" alt="Username">
+                </div>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <section class="preview">
+        <h2 class="visually-hidden">Photo preview</h2>
+        <figure class="preview__cover">
+          <div class="preview__image-container">
+            <img class="preview__image" src="./img/thumbnail.jpg" width="300" height="300" alt="Username">
+          </div>
+          <figcaption class="preview__caption">
+            <h3 class="preview__header">accusamus beatae ad facilis cum similique qui sunt</h3>
+          </figcaption>
+        </figure>
+      </section>
+    </div>
+  </div>
+  <script src="./bundle.js"></script>
+</body>
+</html>
