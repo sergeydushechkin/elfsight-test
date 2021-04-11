@@ -1,0 +1,26 @@
+.author {
+  width: 135px;
+  text-align: center;
+}
+
+.author__link {
+  color: #000000;
+  text-decoration: none;
+}
+
+.author__image {
+  width: 90px;
+  height: 90px;
+
+  border-radius: 50%;
+}
+
+.author__name {
+  margin: 0;
+
+  font-family: "Roboto", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+}
