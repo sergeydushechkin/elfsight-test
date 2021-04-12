@@ -1,0 +1,24 @@
+.photos__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.photos__item {
+  margin-bottom: 2%;
+}
+
+@media (min-width: $tablet-width) {
+  .photos {
+    padding: 0 40px;
+  }
+
+  .photos__item {
+    margin-bottom: 10px;
+  }
+}

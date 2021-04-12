@@ -1,0 +1,22 @@
+.photo {
+  width: 24%;
+  height: 24%;
+}
+
+.photo__image-container {
+  font-size: 0;
+}
+
+.photo__image {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: $tablet-width) {
+  .photos {
+    .photo {
+      width: 18.5%;
+      height: 18.5%;
+    }
+  }
+}

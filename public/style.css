@@ -25,7 +25,7 @@ html {
 
 body {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1440px;
   min-width: 320px;
   font-family: "Roboto", "Arial", sans-serif; }
 
@@ -180,13 +180,16 @@ body {
   .page-albums {
     padding: 0; }
   .page-albums__album-author {
+    margin-bottom: 0;
     padding: 0 40px; }
   .page-albums__albums {
     padding: 0 20px; } }
 
+.album-author {
+  padding-top: 18px; }
+
 .album-author__avatar {
   margin: 0;
-  padding-top: 18px;
   padding-bottom: 5px;
   text-align: center; }
 
@@ -322,5 +325,92 @@ body {
     color: #d5d5d5; }
   .album__count-description {
     display: inline-block; } }
+
+.page-photos__album-cover {
+  margin-bottom: 24px; }
+
+.album-cover {
+  padding-top: 19px;
+  text-align: center; }
+
+.album-cover__image--container {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  margin-bottom: 6px; }
+
+.album-cover__image {
+  width: 100%;
+  height: auto;
+  border-radius: 29px; }
+
+.album-cover__header {
+  margin: 0;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 29px; }
+
+.album-cover__author-name {
+  display: block;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 29px; }
+
+@media (min-width: 768px) {
+  .album-cover {
+    display: flex;
+    padding: 0 40px;
+    padding-top: 16px;
+    text-align: left; }
+  .album-cover__image--container {
+    width: 187px;
+    height: 187px;
+    margin: 0;
+    margin-bottom: 6px; }
+  .album-cover__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px; }
+  .album-cover__header {
+    font-size: 24px;
+    line-height: 28px; }
+  .album-cover__author-name {
+    font-size: 18px;
+    line-height: 21px; } }
+
+.photos__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.photos__item {
+  margin-bottom: 2%; }
+
+@media (min-width: 768px) {
+  .photos {
+    padding: 0 40px; }
+  .photos__item {
+    margin-bottom: 10px; } }
+
+.photo {
+  width: 24%;
+  height: 24%; }
+
+.photo__image-container {
+  font-size: 0; }
+
+.photo__image {
+  width: 100%;
+  height: auto; }
+
+@media (min-width: 768px) {
+  .photos .photo {
+    width: 18.5%;
+    height: 18.5%; } }
 
 /*# sourceMappingURL=style.css.map */
