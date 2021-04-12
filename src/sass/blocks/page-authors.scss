@@ -14,3 +14,10 @@
   text-align: center;
   text-transform: uppercase;
 }
+
+
+@media (min-width: $tablet-width) {
+  .page-authors__header {
+    font-size: 28px;
+  }
+}

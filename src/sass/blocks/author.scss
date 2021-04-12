@@ -1,5 +1,4 @@
 .author {
-  width: 135px;
   text-align: center;
 }
 
@@ -9,8 +8,8 @@
 }
 
 .author__image {
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
 
   border-radius: 50%;
 }
@@ -21,6 +20,20 @@
   font-family: "Roboto", "Arial", sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 21px;
+}
+
+@media (min-width: $tablet-width) {
+  .author__image {
+    width: 85px;
+    height: 85px;
+  }
+
+  .author__name {
+    margin: 0;
+
+    font-size: 18px;
+    line-height: 21px;
+  }
 }

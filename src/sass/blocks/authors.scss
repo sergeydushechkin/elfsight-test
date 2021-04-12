@@ -1,18 +1,26 @@
 .authors__list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 
   list-style: none;
 
+  margin: 0;
   padding: 0 15px;
 }
 
 .authors__author {
   margin: 0 10px;
-  margin-bottom: 25px;
+  margin-bottom: 45px;
+}
 
-  &:last-child {
-    margin-right: auto;
+@media (min-width: $tablet-width) {
+  .authors__author {
+    margin: 0 20px;
+    margin-bottom: 30px;
+  }
+
+  .authors__list {
+    padding: 0 125px;
   }
 }

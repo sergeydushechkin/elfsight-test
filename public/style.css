@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700&subset=cyrillic");
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden,
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box; }
+
+body {
+  margin: 0 auto;
+  max-width: 1280px;
+  min-width: 320px;
+  font-family: "Roboto", "Arial", sans-serif; }
+
+.container {
+  margin: 0 auto;
+  background-color: #ffffff; }
+
+.page-authors {
+  padding-top: 35px; }
+
+.page-authors__header {
+  margin: 0;
+  margin-bottom: 32px;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 33px;
+  text-align: center;
+  text-transform: uppercase; }
+
+@media (min-width: 768px) {
+  .page-authors__header {
+    font-size: 28px; } }
+
+.authors__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0;
+  padding: 0 15px; }
+
+.authors__author {
+  margin: 0 10px;
+  margin-bottom: 45px; }
+
+@media (min-width: 768px) {
+  .authors__author {
+    margin: 0 20px;
+    margin-bottom: 30px; }
+  .authors__list {
+    padding: 0 125px; } }
+
+.author {
+  text-align: center; }
+
+.author__link {
+  color: #000000;
+  text-decoration: none; }
+
+.author__image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; }
+
+.author__name {
+  margin: 0;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 21px; }
+
+@media (min-width: 768px) {
+  .author__image {
+    width: 85px;
+    height: 85px; }
+  .author__name {
+    margin: 0;
+    font-size: 18px;
+    line-height: 21px; } }
+
+.page-header {
+  padding-top: 13px; }
+
+.nav-mobile__link {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+  align-items: center;
+  text-decoration: none;
+  color: #000000; }
+
+.nav-mobile__name {
+  position: relative;
+  padding-left: 37px; }
+  .nav-mobile__name::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 7px;
+    width: 23px;
+    height: 20px;
+    background-image: url("../../img/icon-back.svg");
+    background-repeat: no-repeat; }
+
+@media (min-width: 768px) {
+  .nav-mobile {
+    display: none; } }
+
+.nav-full {
+  display: none; }
+
+@media (min-width: 768px) {
+  .nav-full {
+    display: block; } }
+
+/*# sourceMappingURL=style.css.map */
