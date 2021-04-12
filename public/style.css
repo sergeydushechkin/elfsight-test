@@ -393,9 +393,7 @@ body {
 
 @media (min-width: 768px) {
   .photos {
-    padding: 0 40px; }
-  .photos__item {
-    margin-bottom: 10px; } }
+    padding: 0 40px; } }
 
 .photo {
   width: 24%;
@@ -412,5 +410,12 @@ body {
   .photos .photo {
     width: 18.5%;
     height: 18.5%; } }
+
+.page-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: red; }
 
 /*# sourceMappingURL=style.css.map */
