@@ -1,0 +1,81 @@
+.album-author__avatar {
+  margin: 0;
+  padding-top: 18px;
+  padding-bottom: 5px;
+
+  text-align: center;
+}
+
+.album-author__image {
+  width: 120px;
+  height: 120px;
+
+  border-radius: 50%;
+}
+
+.album-author__header {
+  margin: 0;
+
+  font-family: "Roboto", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 26px;
+
+  text-align: center;
+}
+
+.album-author__city {
+  display: none;
+}
+
+.album-author__count {
+  display: block;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 33px;
+}
+
+@media (min-width: $tablet-width) {
+  .album-author {
+    display: flex;
+  }
+
+  .album-author__image {
+    width: 187px;
+    height: 187px;
+  }
+
+  .album-author__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-left: 15px;
+  }
+
+  .album-author__header {
+    font-size: 24px;
+    line-height: 28px;
+
+    text-align: left;
+  }
+
+  .album-author__city {
+    display: block;
+    margin-bottom: 27px;
+
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  .album-author__count {
+    display: block;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+  }
+}

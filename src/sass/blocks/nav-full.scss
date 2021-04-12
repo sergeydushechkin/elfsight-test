@@ -2,6 +2,52 @@
   display: none;
 }
 
+.nav-full__list {
+  display: flex;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  font-family: "Roboto", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.nav-full__item {
+  position: relative;
+  padding-left: 20px;
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:not(:first-child)::before {
+    content: "";
+    position: absolute;
+
+    top: 3px;
+    left: 7px;
+    width: 7px;
+    height: 14px;
+
+    background-image: url("../../img/icon-forward.svg");
+    background-repeat: no-repeat;
+  }
+}
+
+.nav-full__link {
+  text-decoration: none;
+  color: #3e3e3e;
+
+  &--inactive {
+    color: #ada9a9;
+  }
+}
+
 @media (min-width: $tablet-width) {
   .nav-full {
     display: block;

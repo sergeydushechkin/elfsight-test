@@ -1,0 +1,21 @@
+.page-albums {
+  padding: 0 5px;
+}
+
+.page-albums__album-author {
+  margin-bottom: 13px;
+}
+
+@media (min-width: $tablet-width) {
+  .page-albums {
+    padding: 0;
+  }
+
+  .page-albums__album-author {
+    padding: 0 40px;
+  }
+
+  .page-albums__albums {
+    padding: 0 20px;
+  }
+}
