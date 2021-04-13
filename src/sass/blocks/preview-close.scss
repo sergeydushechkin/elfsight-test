@@ -1,0 +1,19 @@
+.preview-close {
+  width: 17px;
+  height: 17px;
+
+  background-image: url("./img/icon-close-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  cursor: pointer;
+}
+
+@media (min-width: $tablet-width) {
+  .preview__close {
+    width: 30px;
+    height: 30px;
+
+    background-image: url("./img/icon-close-desktop.svg");
+  }
+}

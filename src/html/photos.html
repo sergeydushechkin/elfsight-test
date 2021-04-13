@@ -14,10 +14,10 @@
         <nav class="page-header__nav-full nav-full">
           <ul class="nav-full__list">
             <li class="nav-full__item">
-              <a class="nav-full__link" href="./index.html">Authors</a>
+              <a class="nav-full__link nav-full__link--active" href="./index.html">Authors</a>
             </li>
             <li class="nav-full__item">
-              <a class="nav-full__link" href="./albums.html">Albums</a>
+              <a class="nav-full__link nav-full__link--active" href="./albums.html">Albums</a>
             </li>
             <li class="nav-full__item">
               <a class="nav-full__link nav-full__link--inactive">Photos</a>
@@ -117,24 +117,79 @@
                 </div>
               </a>
             </li>
+            <li class="photos__item photo">
+              <a class="photo__link" href="./img/image.jpg">
+                <div class="photo__image-container">
+                  <img class="photo__image" src="./img/thumbnail.jpg" width="300" height="300" alt="Username">
+                </div>
+              </a>
+            </li>
+            <li class="photos__item photo">
+              <a class="photo__link" href="./img/image.jpg">
+                <div class="photo__image-container">
+                  <img class="photo__image" src="./img/thumbnail.jpg" width="300" height="300" alt="Username">
+                </div>
+              </a>
+            </li>
+            <li class="photos__item photo">
+              <a class="photo__link" href="./img/image.jpg">
+                <div class="photo__image-container">
+                  <img class="photo__image" src="./img/thumbnail.jpg" width="300" height="300" alt="Username">
+                </div>
+              </a>
+            </li>
+            <li class="photos__item photo">
+              <a class="photo__link" href="./img/image.jpg">
+                <div class="photo__image-container">
+                  <img class="photo__image" src="./img/thumbnail.jpg" width="300" height="300" alt="Username">
+                </div>
+              </a>
+            </li>
+            <li class="photos__item photo">
+              <a class="photo__link" href="./img/image.jpg">
+                <div class="photo__image-container">
+                  <img class="photo__image" src="./img/thumbnail.jpg" width="300" height="300" alt="Username">
+                </div>
+              </a>
+            </li>
+            <li class="photos__item photo">
+              <a class="photo__link" href="./img/image.jpg">
+                <div class="photo__image-container">
+                  <img class="photo__image" src="./img/thumbnail.jpg" width="300" height="300" alt="Username">
+                </div>
+              </a>
+            </li>
           </ul>
         </section>
       </main>
 
-      <section class="page-preview preview">
+      <section class="page-preview preview preview--inactive">
         <h2 class="visually-hidden">Photo preview</h2>
         <div class="preview__background">
           <figure class="preview__cover">
             <div class="preview__image-container">
-              <img class="preview__image" src="./img/thumbnail.jpg" width="300" height="300" alt="Username">
+              <img class="preview__image" src="./img/image.jpg" width="2142" height="1345" alt="Username">
+            </div>
+            <div class="preview__nav preview-nav">
+              <ul class="preview-nav__buttons">
+                <li class="preview-nav__button preview-nav__button--back" tabindex="0">
+                  <span class="visually-hidden">Back</span>
+                </li>
+                <li class="preview-nav__button preview-nav__button--forward" tabindex="0">
+                  <span class="visually-hidden">Forward</span>
+                </li>
+              </ul>
             </div>
             <figcaption class="preview__caption">
               <div class="preview__author">
-                <img class="preview__author-avatar" src="./img/avatar.jpg" width="187" height="187" alt="Username">
+                <img class="preview__author-image" src="./img/avatar.jpg" width="187" height="187" alt="Username">
               </div>
               <h3 class="preview__header"><span class="preview__author-name">Leanne Graham</span>accusamus beatae ad facilis cum similique qui sunt</h3>
             </figcaption>
           </figure>
+          <div class="preview__close preview-close" tabindex="0">
+              <span class="visually-hidden">Close</span>
+          </div>
         </div>
       </section>
     </div>

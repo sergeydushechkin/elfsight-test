@@ -34,7 +34,7 @@
     width: 7px;
     height: 14px;
 
-    background-image: url("../../img/icon-forward.svg");
+    background-image: url("./img/icon-forward.svg");
     background-repeat: no-repeat;
   }
 }
@@ -42,6 +42,11 @@
 .nav-full__link {
   text-decoration: none;
   color: #3e3e3e;
+
+  &--active:hover,
+  &--active:focus {
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  }
 
   &--inactive {
     color: #ada9a9;

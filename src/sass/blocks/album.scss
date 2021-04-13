@@ -8,6 +8,11 @@
 
 .album__cover {
   margin: 0;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.3);
+  }
 }
 
 .album__image-container {

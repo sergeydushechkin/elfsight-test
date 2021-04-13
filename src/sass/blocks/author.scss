@@ -1,5 +1,10 @@
 .author {
   text-align: center;
+
+  &:hover .author__image,
+  &:focus .author__image {
+    box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.3);
+  }
 }
 
 .author__link {
