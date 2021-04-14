@@ -51,6 +51,7 @@
   },
   "dependencies": {
     "axios": "0.20.0",
+    "core-js": "3.10.1",
     "history": "4.10.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",

@@ -1,3 +1,6 @@
+import "core-js/es/object/assign";
+import 'core-js/features/promise';
+
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
