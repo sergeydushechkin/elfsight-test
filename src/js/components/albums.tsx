@@ -2,19 +2,18 @@ import * as React from "react";
 import {Link} from "react-router-dom";
 
 interface AlbumsList {
-  link: string;
-  image: string;
-  authorName: string;
-  albumName: string;
-  photosCount: string;
+  id: string;
+  userId: string;
+  title: string;
 }
 
 interface Props {
-  albums: Array<AlbumsList>
+  albums: Array<AlbumsList>,
+  cover: string;
 }
 
 const Albums:React.FunctionComponent<Props> = (props: Props) => {
-  const {albums} = props;
+  const {albums, cover} = props;
 
   return (
     <section className="page-albums__albums albums">
@@ -22,17 +21,17 @@ const Albums:React.FunctionComponent<Props> = (props: Props) => {
       <ul className="albums__list">
         {
           albums.map((album) => {
-            const {link, image, authorName, albumName, photosCount} = album;
+            const {id, userId, title} = album;
             return (
-              <li key={link} className="albums__item album">
-                <Link class="album__link" to={link}>
+              <li key={id} className="albums__item album">
+                <Link className="album__link" to={`${userId}/${id}`}>
                   <figure className="album__cover">
                     <div className="album__image-container">
-                      <img className="album__image" src={image} width="300" height="300" alt={authorName}/>
+                      <img className="album__image" src={cover} width="300" height="300" alt={title}/>
                     </div>
                     <figcaption className="album__caption">
-                      <h3 className="album__header">{albumName}</h3>
-                      <p className="album__count"><span className="album__count-description">photos: </span>{photosCount}</p>
+                      <h3 className="album__header">{title}</h3>
+                      <p className="album__count"><span className="album__count-description">photos: </span>{10}</p>
                     </figcaption>
                   </figure>
                 </Link>

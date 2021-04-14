@@ -13,7 +13,7 @@ const App:React.FunctionComponent = () => {
   return (
     <Router history={history}>
       <Switch>
-        <Route exact path={`${AppRoute.ALBUMS}/:author/:album`} component={PhotosPage}/>
+        <Route exact path={`${AppRoute.ALBUMS}/:authorId/:albumId`} component={PhotosPage}/>
         <Route exact path={`${AppRoute.ALBUMS}/:id`} component={AlbumsPage}/>
         <Route path={AppRoute.ERROR} component={ErrorPage}/>
         <Route path={AppRoute.ROOT} component={AuthorsPage}/>

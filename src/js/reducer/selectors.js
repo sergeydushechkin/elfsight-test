@@ -1,16 +1,36 @@
-import {Author, Album, Photo} from "../types";
-import {State} from "./reducer";
+import {createSelector} from "reselect";
 
-const getAuthors = (state: State):Array<Author> => {
+const getAuthors = (state) => {
   return state.authors;
 };
 
-const getAlbums = (state: State):Array<Album> => {
+const getAlbums = (state) => {
   return state.albums;
 };
 
-const getPhotos = (state: State):Array<Photo> => {
+const getPhotos = (state) => {
   return state.photos;
 };
 
-export {getAuthors, getAlbums, getPhotos};
+const getId = (state, id) => {
+  return id;
+};
+
+const getFilteredAuthor = createSelector(
+    getAuthors,
+    getId,
+    (resultOne, resultTwo) => {
+      return resultOne.filter((it) => it.id === resultTwo);
+    }
+);
+
+const getFilteredAlbum = createSelector(
+    getAlbums,
+    getId,
+    (resultOne, resultTwo) => {
+      return resultOne.filter((it) => it.id === resultTwo);
+    }
+);
+
+
+export {getAuthors, getAlbums, getPhotos, getFilteredAuthor, getFilteredAlbum};

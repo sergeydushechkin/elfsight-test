@@ -14,8 +14,8 @@ const Author:React.FunctionComponent<Props> = (props: Props) => {
 
   return (
     <li className="authors__author author">
-      <Link class="author__link" to={`${AppRoute.ALBUMS}/${id}`}>
-        <img className="author__image" src={avatar} width="187" height="187" alt={name}/>
+      <Link className="author__link" to={`${AppRoute.ALBUMS}/${id}`}>
+        <img className="author__image" src={avatar} width="792" height="792" alt={name}/>
         <h2 className="author__name">{name}</h2>
       </Link>
     </li>

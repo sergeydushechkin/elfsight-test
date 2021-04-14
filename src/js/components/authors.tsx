@@ -21,7 +21,7 @@ const Authors:React.FunctionComponent<Props> = (props: Props) => {
         {
           authors.map((author) => {
             return (
-              <Author key={author.id} id={author.id} name={author.name} avatar={`./img/avatar.jpg`}/>
+              <Author key={author.id} id={author.id} name={author.name} avatar={`./img/avatar.png`}/>
             );
           })
         }

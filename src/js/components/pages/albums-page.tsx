@@ -1,4 +1,8 @@
 import * as React from "react";
+import {useDispatch, useSelector} from "react-redux";
+
+import {Operation} from "../../reducer/reducer.js";
+import {getFilteredAuthor, getAlbums} from "../../reducer/selectors.js";
 
 import HeaderNav from "../header-nav";
 import AlbumAuthor from "../album-author";
@@ -7,42 +11,11 @@ import Albums from "../albums";
 const navItems = [
   {
     name: `Authors`,
-    link: `./index.html`,
+    link: `/`,
   },
   {
     name: `Albums`,
     link: `.`,
-  },
-];
-
-const albumsList = [
-  {
-    link: `./photos.html`,
-    image: `./img/thumbnail.jpg`,
-    authorName: `Username`,
-    albumName: `quidem molestiae enim`,
-    photosCount: `10`,
-  },
-  {
-    link: `./photos.html`,
-    image: `./img/thumbnail.jpg`,
-    authorName: `Username`,
-    albumName: `quidem molestiae enim`,
-    photosCount: `10`,
-  },
-  {
-    link: `./photos.html`,
-    image: `./img/thumbnail.jpg`,
-    authorName: `Username`,
-    albumName: `quidem molestiae enim`,
-    photosCount: `10`,
-  },
-  {
-    link: `./photos.html`,
-    image: `./img/thumbnail.jpg`,
-    authorName: `Username`,
-    albumName: `quidem molestiae enim`,
-    photosCount: `10`,
   },
 ];
 
@@ -55,6 +28,16 @@ interface Props {
 }
 
 const AlbumsPage:React.FunctionComponent<Props> = (props: Props) => {
+  const {match} = props;
+  const curentUserId = match.params.id;
+  const dispatch = useDispatch();
+
+  const authorData = useSelector((state) => getFilteredAuthor(state, curentUserId))[0];
+  const albumsData = useSelector(getAlbums);
+
+  React.useEffect(() => {
+    dispatch(Operation.loadAlbums(curentUserId));
+  }, [dispatch, curentUserId]);
 
   return (
     <div className="container">
@@ -63,8 +46,15 @@ const AlbumsPage:React.FunctionComponent<Props> = (props: Props) => {
       </header>
       <main className="page-albums">
         <h1 className="visually-hidden">Albums</h1>
-        <AlbumAuthor name={`Leanne Graham`} avatar={`./img/avatar.jpg`} city={`Wisokyburgh`} albumsCount={`10`} />
-        <Albums albums={albumsList} />
+        {
+          authorData && albumsData.length
+            ?
+            <React.Fragment>
+              <AlbumAuthor name={authorData.name} avatar={`./img/avatar.png`} city={authorData.city} albumsCount={`10`} />
+              <Albums albums={albumsData} cover={`./img/thumbnail.jpg`}/>
+            </React.Fragment>
+            : `Loading...`
+        }
       </main>
     </div>
   );
