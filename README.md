@@ -9,10 +9,12 @@ npm install
 
 ## Usage
 
-To start project
+To start project type:
 ```sh
 npm run start
 ```
+and run `http://localhost:1337/` in you browser
+
 
 ## Run tests
 
