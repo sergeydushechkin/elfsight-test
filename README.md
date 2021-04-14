@@ -9,14 +9,9 @@ npm install
 
 ## Usage
 
-To start html project
+To start project
 ```sh
-npm run htmlstart
-```
-
-To start js project
-```sh
-npm run jsstart
+npm run start
 ```
 
 ## Run tests
