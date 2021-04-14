@@ -1,5 +1,6 @@
 .author {
   text-align: center;
+  width: 25%;
 
   &:hover .author__image,
   &:focus .author__image {
@@ -30,6 +31,10 @@
 }
 
 @media (min-width: $tablet-width) {
+  .author {
+    width: 15%;
+  }
+
   .author__image {
     width: 85px;
     height: 85px;
