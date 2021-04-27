@@ -1,18 +1,20 @@
 import {createSelector} from "reselect";
+import {Album, Author, Photo} from "../types";
+import {State} from "./reducer";
 
-const getAuthors = (state) => {
+const getAuthors = (state: State): Array<Author> => {
   return state.authors;
 };
 
-const getAlbums = (state) => {
+const getAlbums = (state: State): Array<Album> => {
   return state.albums;
 };
 
-const getPhotos = (state) => {
+const getPhotos = (state: State): Array<Photo> => {
   return state.photos;
 };
 
-const getId = (state, id) => {
+const getId = (state: State, id: string) => {
   return id;
 };
 

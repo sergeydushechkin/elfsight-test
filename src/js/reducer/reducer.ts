@@ -1,10 +1,7 @@
-import {Dispatch, PreloadedState, StoreEnhancer} from "redux";
-
 import {Author, Album, Photo} from "../types";
 import {createAuthor, createAlbum, createPhoto} from "../adapters";
-import {AxiosInstance, AxiosPromise} from "axios";
-import {Reducer} from "react";
-import {ThunkDispatch} from "redux-thunk";
+import {AxiosInstance} from "axios";
+import {ThunkAction} from "redux-thunk";
 
 interface State {
   authors: Array<Author>;
@@ -16,6 +13,8 @@ interface Action {
  type: string;
  payload: Array<Author> | Array<Album> | Array<Photo>;
 }
+
+type OperationType = ThunkAction<Promise<void>, State, AxiosInstance, Action>;
 
 const initialState: State = {
   authors: [],
@@ -45,7 +44,7 @@ const ActionCreator = {
 };
 
 const Operation = {
-  loadAuthors: () => (dispatch, getState, api): ThunkDispatch<State, State, any> => {
+  loadAuthors: (): OperationType => (dispatch, getState, api) => {
     return api.get(`/users`)
       .then((response) => {
         const loadedData = response.data.map((data) => createAuthor(data));
@@ -53,7 +52,7 @@ const Operation = {
         return loadedData;
       });
   },
-  loadAlbums: (id: string) => (dispatch: Dispatch, getState: State, api: AxiosInstance): AxiosPromise => {
+  loadAlbums: (id: string): OperationType => (dispatch, getState, api) => {
     return api.get(`/users/${id}/albums`)
       .then((response) => {
         const loadedData = response.data.map((data) => createAlbum(data));
@@ -61,7 +60,7 @@ const Operation = {
         return loadedData;
       });
   },
-  loadPhotos: (id: string) => (dispatch: Dispatch, getState: State, api: AxiosInstance): AxiosPromise => {
+  loadPhotos: (id: string): OperationType => (dispatch, getState, api) => {
     return api.get(`albums/${id}/photos`)
       .then((response) => {
         const loadedData = response.data.map((data) => createPhoto(data));
