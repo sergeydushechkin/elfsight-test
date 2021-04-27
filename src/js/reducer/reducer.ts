@@ -1,5 +1,9 @@
+import {Dispatch, PreloadedState, StoreEnhancer} from "redux";
+
 import {Author, Album, Photo} from "../types";
 import {createAuthor, createAlbum, createPhoto} from "../adapters";
+import {AxiosInstance, AxiosPromise} from "axios";
+import {Reducer} from "react";
 
 interface State {
   authors: Array<Author>;
@@ -40,7 +44,7 @@ const ActionCreator = {
 };
 
 const Operation = {
-  loadAuthors: () => (dispatch, getState, api) => {
+  loadAuthors: () => (dispatch: Reducer<State, Action>, getState: PreloadedState<State>, api: StoreEnhancer<AxiosPromise>): AxiosPromise => {
     return api.get(`/users`)
       .then((response) => {
         const loadedData = response.data.map((data) => createAuthor(data));
@@ -48,7 +52,7 @@ const Operation = {
         return loadedData;
       });
   },
-  loadAlbums: (id: string) => (dispatch, getState, api) => {
+  loadAlbums: (id: string) => (dispatch: Dispatch, getState: State, api: AxiosInstance): AxiosPromise => {
     return api.get(`/users/${id}/albums`)
       .then((response) => {
         const loadedData = response.data.map((data) => createAlbum(data));
@@ -56,7 +60,7 @@ const Operation = {
         return loadedData;
       });
   },
-  loadPhotos: (id: string) => (dispatch, getState, api) => {
+  loadPhotos: (id: string) => (dispatch: Dispatch, getState: State, api: AxiosInstance): AxiosPromise => {
     return api.get(`albums/${id}/photos`)
       .then((response) => {
         const loadedData = response.data.map((data) => createPhoto(data));
@@ -79,4 +83,4 @@ const reducer = (state: State = initialState, action: Action): State => {
   return state;
 };
 
-export {reducer, ActionCreator, Operation, ActionType};
+export {reducer, ActionCreator, Operation, ActionType, Action, State};
