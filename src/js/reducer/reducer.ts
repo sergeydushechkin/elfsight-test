@@ -4,6 +4,7 @@ import {Author, Album, Photo} from "../types";
 import {createAuthor, createAlbum, createPhoto} from "../adapters";
 import {AxiosInstance, AxiosPromise} from "axios";
 import {Reducer} from "react";
+import {ThunkDispatch} from "redux-thunk";
 
 interface State {
   authors: Array<Author>;
@@ -44,7 +45,7 @@ const ActionCreator = {
 };
 
 const Operation = {
-  loadAuthors: () => (dispatch: Reducer<State, Action>, getState: PreloadedState<State>, api: StoreEnhancer<AxiosPromise>): AxiosPromise => {
+  loadAuthors: () => (dispatch, getState, api): ThunkDispatch<State, State, any> => {
     return api.get(`/users`)
       .then((response) => {
         const loadedData = response.data.map((data) => createAuthor(data));
