@@ -6,13 +6,14 @@ import * as ReactDOM from "react-dom";
 
 import {createStore, applyMiddleware, compose} from "redux";
 import {Provider} from "react-redux";
-import thunk from "redux-thunk";
+import thunk, {ThunkMiddleware} from "redux-thunk";
+import {AxiosInstance} from "axios";
 
 import {createAPI} from "./api";
 import history from "./history";
 import {AppRoute} from "./const";
 
-import {Operation, reducer} from "./reducer/reducer.js";
+import {Operation, reducer, State, Action} from "./reducer/reducer";
 
 import App from "./components/app";
 
@@ -29,7 +30,11 @@ const api = createAPI(onError);
 const store = createStore(
     reducer,
     compose(
-        applyMiddleware(thunk.withExtraArgument(api)),
+        applyMiddleware(thunk.withExtraArgument(api) as ThunkMiddleware<
+          State,
+          Action,
+          AxiosInstance
+        >),
         window[`__REDUX_DEVTOOLS_EXTENSION__`] ? window[`__REDUX_DEVTOOLS_EXTENSION__`]() : (f) => f
     )
 );

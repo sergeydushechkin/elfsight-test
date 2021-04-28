@@ -1,8 +1,8 @@
 import * as React from "react";
 import {useDispatch, useSelector} from "react-redux";
 
-import {Operation} from "../../reducer/reducer.js";
-import {getFilteredAuthor, getAlbums} from "../../reducer/selectors.js";
+import {Operation} from "../../reducer/reducer";
+import {getFilteredAuthor, getAlbums} from "../../reducer/selectors";
 
 import HeaderNav from "../header-nav";
 import AlbumAuthor from "../album-author";

@@ -1,7 +1,7 @@
 import * as React from "react";
 import {useSelector} from "react-redux";
 
-import {getAuthors} from "../../reducer/selectors.js";
+import {getAuthors} from "../../reducer/selectors";
 
 import Authors from "../authors";
 

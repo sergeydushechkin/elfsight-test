@@ -1,6 +1,22 @@
+import {Author, Album, Photo} from "../types";
 import {createAuthor, createAlbum, createPhoto} from "../adapters";
+import {AxiosInstance} from "axios";
+import {ThunkAction} from "redux-thunk";
 
-const initialState = {
+interface State {
+  authors: Array<Author>;
+  albums: Array<Album>;
+  photos: Array<Photo>;
+}
+
+interface Action {
+ type: string;
+ payload: Array<Author> | Array<Album> | Array<Photo>;
+}
+
+type OperationType = ThunkAction<Promise<void>, State, AxiosInstance, Action>;
+
+const initialState: State = {
   authors: [],
   albums: [],
   photos: [],
@@ -13,22 +29,22 @@ const ActionType = {
 };
 
 const ActionCreator = {
-  loadAuthors: (data) => ({
+  loadAuthors: (data: Array<Author>): Action => ({
     type: ActionType.LOAD_AUTHORS,
     payload: data,
   }),
-  loadAlbums: (data) => ({
+  loadAlbums: (data: Array<Album>): Action => ({
     type: ActionType.LOAD_ALBUMS,
     payload: data,
   }),
-  loadPhotos: (data) => ({
+  loadPhotos: (data: Array<Photo>): Action => ({
     type: ActionType.LOAD_PHOTOS,
     payload: data,
   }),
 };
 
 const Operation = {
-  loadAuthors: () => (dispatch, getState, api) => {
+  loadAuthors: (): OperationType => (dispatch, getState, api) => {
     return api.get(`/users`)
       .then((response) => {
         const loadedData = response.data.map((data) => createAuthor(data));
@@ -36,7 +52,7 @@ const Operation = {
         return loadedData;
       });
   },
-  loadAlbums: (id) => (dispatch, getState, api) => {
+  loadAlbums: (id: string): OperationType => (dispatch, getState, api) => {
     return api.get(`/users/${id}/albums`)
       .then((response) => {
         const loadedData = response.data.map((data) => createAlbum(data));
@@ -44,7 +60,7 @@ const Operation = {
         return loadedData;
       });
   },
-  loadPhotos: (id) => (dispatch, getState, api) => {
+  loadPhotos: (id: string): OperationType => (dispatch, getState, api) => {
     return api.get(`albums/${id}/photos`)
       .then((response) => {
         const loadedData = response.data.map((data) => createPhoto(data));
@@ -54,7 +70,7 @@ const Operation = {
   },
 };
 
-const reducer = (state = initialState, action) => {
+const reducer = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionType.LOAD_AUTHORS:
       return Object.assign({}, state, {authors: action.payload});
@@ -67,4 +83,4 @@ const reducer = (state = initialState, action) => {
   return state;
 };
 
-export {reducer, ActionCreator, Operation, ActionType};
+export {reducer, ActionCreator, Operation, ActionType, Action, State};
